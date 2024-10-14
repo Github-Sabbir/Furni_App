@@ -25,7 +25,6 @@ Route::get('/Oder-completed',[FrontendController::class,'completedOderPage'])->n
 
 
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
