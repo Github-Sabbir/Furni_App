@@ -151,52 +151,51 @@ a.more {
     color: rgba(255, 255, 255, 0.5);
     margin-bottom: 30px;
 }
+.hero {
+    position: relative;
+    height: auto; /* Allow height to be determined by content */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
 .hero .hero-img-wrap {
     position: relative;
+    width: 100%; /* Full width of the container */
 }
+
 .hero .hero-img-wrap img {
-    position: relative;
-    top: 0px;
-    right: 0px;
-    z-index: 2;
-    max-width: 780px;
-    left: -20px;
+    max-width: 100%; /* Scale image with the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent extra space below */
 }
-@media (min-width: 768px) {
-    .hero .hero-img-wrap img {
-        right: 0px;
-        left: -100px;
-    }
-}
-@media (min-width: 992px) {
-    .hero .hero-img-wrap img {
-        left: 0px;
-        top: -80px;
-        position: absolute;
-        right: -50px;
-    }
-}
-@media (min-width: 1200px) {
-    .hero .hero-img-wrap img {
-        left: 0px;
-        top: -80px;
-        right: -100px;
-    }
-}
+
+/* Background dots */
 .hero .hero-img-wrap:after {
     content: "";
     position: absolute;
-    width: 255px;
-    height: 217px;
-    background-image: url("../images/dots-light.svg");
+    width: 255px; /* Adjust width as needed */
+    height: 217px; /* Adjust height as needed */
+    background-image: url("../images/dots-light.svg"); /* Path to your dots image */
     background-size: contain;
     background-repeat: no-repeat;
-    right: -100px;
-    top: -0px;
+    right: -100px; /* Position it to the right */
+    top: 0; /* Position it at the top */
+    z-index: 1; /* Ensure it's behind the image */
 }
-@media (min-width: 1200px) {
+
+/* Adjustments for larger screens */
+@media (min-width: 992px) {
+    .hero .hero-img-wrap img {
+        position: absolute; /* Allow for positioning */
+        top: -20px; /* Adjust vertical position if needed */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center the image */
+        max-width: none; /* Allow natural width */
+    }
+
+    /* Adjust dots position on larger screens */
     .hero .hero-img-wrap:after {
-        top: -40px;
+        top: -40px; /* Adjust the position of dots */
+        right: -150px; /* Move further right if needed */
     }
 }
 

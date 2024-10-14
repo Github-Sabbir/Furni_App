@@ -14,7 +14,11 @@ Home page
 					<p><a href="{{ route('shopPage') }}" class="btn btn-secondary me-2">Shop Now</a><a href="{{ route('blogPage') }}" class="btn btn-white-outline">Explore</a></p>
 				</div>
 			</div>
-			@include('Frontend.includes.heroImage')
+			<div class="col-lg-7 col-md-12">
+    <div class="hero-img-wrap">
+        <img src="{{ asset('/') }}assets/Frontend/images/couch.png" class="img-fluid">
+    </div>
+</div>
 		</div>
 	</div>
 </div>
